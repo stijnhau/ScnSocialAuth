@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.4.0",
         "zendframework/zend-authentication": "2.*",
         "zendframework/zend-db": "2.*",
         "zendframework/zend-eventmanager": "2.*",
@@ -34,7 +34,7 @@
         "zendframework/zend-uri": "2.*",
         "zendframework/zend-view": "2.*",
         "zf-commons/zfc-base": "0.1.*",
-        "zf-commons/zfc-user": "1.4.*",
+        "zf-commons/zfc-user": ">=1.4",
         "hybridauth/hybridauth": "2.8.*"
     },
     "require-dev": {
