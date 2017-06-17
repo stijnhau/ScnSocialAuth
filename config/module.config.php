@@ -1,4 +1,9 @@
 <?php
+namespace ScnSocialAuth;
+
+use Zend\Router\Http\Segment;
+use Zend\Router\Http\Literal;
+
 return array(
     'controllers' => array(
         'factories' => array(
@@ -14,7 +19,7 @@ return array(
     'router' => array(
         'routes' => array(
             'scn-social-auth-hauth' => array(
-                'type'    => 'Literal',
+                'type'    => Literal::class,
                 'priority' => 2000,
                 'options' => array(
                     'route' => '/scn-social-auth/hauth',
@@ -25,7 +30,7 @@ return array(
                 ),
             ),
             'scn-social-auth-user' => array(
-                'type' => 'Literal',
+                'type' => Literal::class,
                 'priority' => 2000,
                 'options' => array(
                     'route' => '/user',
@@ -37,7 +42,7 @@ return array(
                 'may_terminate' => true,
                 'child_routes' => array(
                     'authenticate' => array(
-                        'type' => 'Literal',
+                        'type' => Literal::class,
                         'options' => array(
                             'route' => '/authenticate',
                             'defaults' => array(
@@ -48,7 +53,7 @@ return array(
                         'may_terminate' => true,
                         'child_routes' => array(
                             'provider' => array(
-                                'type' => 'Segment',
+                                'type' => Segment::class,
                                 'options' => array(
                                     'route' => '/:provider',
                                     'constraints' => array(
@@ -63,7 +68,7 @@ return array(
                         ),
                     ),
                     'login' => array(
-                        'type' => 'Literal',
+                        'type' => Literal::class,
                         'options' => array(
                             'route' => '/login',
                             'defaults' => array(
@@ -74,7 +79,7 @@ return array(
                         'may_terminate' => true,
                         'child_routes' => array(
                             'provider' => array(
-                                'type' => 'Segment',
+                                'type' => Segment::class,
                                 'options' => array(
                                     'route' => '/:provider',
                                     'constraints' => array(
@@ -89,7 +94,7 @@ return array(
                         ),
                     ),
                     'logout' => array(
-                        'type' => 'Literal',
+                        'type' => Literal::class,
                         'options' => array(
                             'route' => '/logout',
                             'defaults' => array(
@@ -99,7 +104,7 @@ return array(
                         ),
                     ),
                     'register' => array(
-                        'type' => 'Literal',
+                        'type' => Literal::class,
                         'options' => array(
                             'route' => '/register',
                             'defaults' => array(
@@ -109,7 +114,7 @@ return array(
                         ),
                     ),
                     'add-provider' => array(
-                        'type' => 'Literal',
+                        'type' => Literal::class,
                         'options' => array(
                             'route' => '/add-provider',
                             'defaults' => array(
@@ -119,7 +124,7 @@ return array(
                         ),
                         'child_routes' => array(
                             'provider' => array(
-                                'type' => 'Segment',
+                                'type' => Segment::class,
                                 'options' => array(
                                     'route' => '/:provider',
                                     'constraints' => array(
